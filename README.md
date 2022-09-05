@@ -46,4 +46,4 @@ class MyWidget extends StatelessWidget {
 }
 ```
 
-![Screenshot](https://i.imgur.com/hcoCR50.png)
+![Screenshot](https://github.com/helightdev/helightdev/raw/main/Screenshot%202022-09-05%20034350.gif)
