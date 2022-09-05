@@ -67,7 +67,6 @@ class StitchedStack extends StatefulWidget {
 }
 
 class StitchedStackState extends State<StitchedStack> {
-
   final GlobalKey stitchKey = GlobalKey();
   late StitchedStackController controller;
 
@@ -75,6 +74,12 @@ class StitchedStackState extends State<StitchedStack> {
   void initState() {
     controller = widget.controller ?? StitchedStackController();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    if (widget.controller != null) controller.dispose();
+    super.dispose();
   }
 
   @override
@@ -134,12 +139,15 @@ class StitchedStackState extends State<StitchedStack> {
           onChange: (updatedSize) {
             controller.restitch(updatedSize);
           },
-          child: _buildWrappedChild(data.constraints)
-      );
+          child: _buildWrappedChild(data.constraints));
     }
 
     return ConstrainedBox(
-      constraints: BoxConstraints(minHeight: size.height, minWidth: size.width, maxWidth: size.width, maxHeight: size.height),
+      constraints: BoxConstraints(
+          minHeight: size.height,
+          minWidth: size.width,
+          maxWidth: size.width,
+          maxHeight: size.height),
       child: Stack(
         fit: StackFit.expand,
         clipBehavior: Clip.hardEdge,

@@ -3,7 +3,8 @@ import 'dart:async';
 import 'package:flutter/widgets.dart';
 
 class StitchedStackController {
-  final StreamController<StitchedStackData> _controller = StreamController<StitchedStackData>.broadcast();
+  final StreamController<StitchedStackData> _controller =
+      StreamController.broadcast();
 
   late StitchedStackData _data;
 
@@ -24,6 +25,10 @@ class StitchedStackController {
   void _update(StitchedStackData state) {
     _data = state;
     _controller.sink.add(state);
+  }
+
+  void dispose() {
+    _controller.close();
   }
 }
 

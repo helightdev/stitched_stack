@@ -1,6 +1,6 @@
 name: stitched_stack
 description: A flutter library providing a way to stich a size-bound stack onto a widget
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/helightdev/stitched_stack
 
 environment:

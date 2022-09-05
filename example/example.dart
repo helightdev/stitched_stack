@@ -11,9 +11,13 @@ void main() {
         child: ListView(
           children: [
             StitchedStack(
-              stitch: TextField(controller: fieldController, maxLines: 999, minLines: 1),
+              stitch: TextField(
+                  controller: fieldController, maxLines: 999, minLines: 1),
               children: [
-                Positioned(bottom: 0, right: 0,child: Container(color: Colors.red, width: 50, height: 50))
+                Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: Container(color: Colors.red, width: 50, height: 50))
               ],
             )
           ],
